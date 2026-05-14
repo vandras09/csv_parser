@@ -1,11 +1,12 @@
 import sqlite3
+import csv
 import os
 
 
-"""def parse(file_path):
-    with open(file_path) as file:
-    
-    return header, data"""
+def parse(file_path):
+    with open('.testfiles/test.csv', 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        header = next(reader)
 
 def db_inject(schema, data=""):
     with sqlite3.connect('data.db') as con:
